@@ -2,7 +2,7 @@ import React from "react";
 
 const rootApiURL = "http://5dd7af92505c590014d3b4ac.mockapi.io/";
 
-const petsPath = "pets";
+const petsPath = "pets/";
 
 export const getPets = () => {
     return fetch(rootApiURL + petsPath)
@@ -15,3 +15,8 @@ export const breedOptions = [
     "Beagle",
     "French Bulldog"
 ];
+
+export const getPetsDetay = (id) => {
+    return fetch(rootApiURL + petsPath + id)
+        .then((resp) => resp.json())
+};
